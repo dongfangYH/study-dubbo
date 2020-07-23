@@ -1,0 +1,16 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+
+dubbo:
+  application:
+    name: service-consumer1
+  registry:
+    address: zookeeper://127.0.0.1:2181
+  scan:
+    base-packages: com.study.dubbo.consumer
+  consumer:
+    timeout: 3000
+
+server:
+  port: 9200
