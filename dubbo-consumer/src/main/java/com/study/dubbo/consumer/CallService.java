@@ -7,10 +7,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class CallService {
 
-    @Reference(check = false, group = "normal-group", mock="return null")
+    @Reference(check = false, group = "normal-group", mock="return null", loadbalance = "roundrobin",
+               sticky = true)
     private DemoService demoService;
 
-    @Reference(check = false, group = "super-group", mock = "com.study.dubbo.mock.MockDemoService", stub = "com.study.dubbo.stub.DemoVipStubService")
+    @Reference(check = false, group = "super-group", loadbalance = "roundrobin",
+               mock = "com.study.dubbo.mock.MockDemoService",
+               stub = "com.study.dubbo.stub.DemoVipStubService",
+               sticky = true)
     private DemoService superDemoService;
 
     public String sayHello(String name){

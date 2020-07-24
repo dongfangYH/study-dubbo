@@ -11,6 +11,7 @@ dubbo:
     base-packages: com.study.dubbo.consumer
   consumer:
     timeout: 3000
+    lazy: true # 调用时再创建长连接
 
 server:
   port: 9200
