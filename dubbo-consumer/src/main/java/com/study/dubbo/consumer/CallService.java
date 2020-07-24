@@ -10,7 +10,7 @@ public class CallService {
     @Reference(check = false, group = "normal-group")
     private DemoService demoService;
 
-    @Reference(check = false, group = "super-group")
+    @Reference(check = false, group = "super-group", mock = "com.study.dubbo.mock.MockDemoService")
     private DemoService superDemoService;
 
     public String sayHello(String name){
