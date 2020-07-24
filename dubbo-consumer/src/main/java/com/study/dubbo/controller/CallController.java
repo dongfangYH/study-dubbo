@@ -17,4 +17,9 @@ public class CallController {
     public String call(@PathVariable String name){
         return callService.sayHello(name);
     }
+
+    @GetMapping("/vip/{name}/call")
+    public String callVip(@PathVariable String name) {
+        return callService.sayHiToVip(name);
+    }
 }

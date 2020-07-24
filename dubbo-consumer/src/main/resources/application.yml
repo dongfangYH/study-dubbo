@@ -5,10 +5,8 @@ spring:
 dubbo:
   application:
     name: service-consumer1
-  registrys:
-    local:
-      protocol: zookeeper
-      address: 127.0.0.1:2181
+  registry:
+    address: zookeeper://127.0.0.1:2181
   scan:
     base-packages: com.study.dubbo.consumer
   consumer:
